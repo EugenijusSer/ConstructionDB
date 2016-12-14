@@ -309,5 +309,13 @@ namespace ConstructionDataBase
             DataTable data = (DataTable)dataGridView.DataSource;
             dataGridView.DataSource = dbMet.GroupAndSum(data);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DataTable data = (DataTable)dataGridView.DataSource;
+            dataGridView.DataSource = dbMet.Top5(data);
+        }
+
+        
     }
 }

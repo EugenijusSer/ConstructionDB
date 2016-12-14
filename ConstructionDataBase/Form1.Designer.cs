@@ -33,9 +33,6 @@
             this.statybvieteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.statybvieteTableAdapter = new ConstructionDataBase.ConstructionDBDataSetTableAdapters.StatybvieteTableAdapter();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.showButton = new System.Windows.Forms.Button();
-            this.selectComboBox = new System.Windows.Forms.ComboBox();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.insertTab = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.insertStatybvieteTab = new System.Windows.Forms.TabPage();
@@ -143,25 +140,28 @@
             this.deleteTab = new System.Windows.Forms.TabPage();
             this.tabControl4 = new System.Windows.Forms.TabControl();
             this.deleteStatybvieteTab = new System.Windows.Forms.TabPage();
+            this.deleteStatybvieteButton = new System.Windows.Forms.Button();
+            this.deleteStatybviete = new System.Windows.Forms.ComboBox();
             this.label41 = new System.Windows.Forms.Label();
             this.deleteImoneTab = new System.Windows.Forms.TabPage();
+            this.deleteImoneButton = new System.Windows.Forms.Button();
+            this.deleteImone = new System.Windows.Forms.ComboBox();
             this.label42 = new System.Windows.Forms.Label();
             this.deleteDarbuotojasTab = new System.Windows.Forms.TabPage();
+            this.deleteDarbuotojasButton = new System.Windows.Forms.Button();
+            this.deleteDarbuotojas = new System.Windows.Forms.ComboBox();
             this.label43 = new System.Windows.Forms.Label();
             this.deleteStatybininkasTab = new System.Windows.Forms.TabPage();
+            this.deleteStatybininkasButton = new System.Windows.Forms.Button();
+            this.deleteStatybininkas = new System.Windows.Forms.ComboBox();
             this.label44 = new System.Windows.Forms.Label();
             this.deletePriziuretojasTab = new System.Windows.Forms.TabPage();
-            this.label45 = new System.Windows.Forms.Label();
-            this.deleteStatybviete = new System.Windows.Forms.ComboBox();
-            this.deleteImone = new System.Windows.Forms.ComboBox();
-            this.deleteDarbuotojas = new System.Windows.Forms.ComboBox();
-            this.deleteStatybininkas = new System.Windows.Forms.ComboBox();
-            this.deletePriziuretojas = new System.Windows.Forms.ComboBox();
-            this.deleteStatybvieteButton = new System.Windows.Forms.Button();
-            this.deleteImoneButton = new System.Windows.Forms.Button();
-            this.deleteDarbuotojasButton = new System.Windows.Forms.Button();
-            this.deleteStatybininkasButton = new System.Windows.Forms.Button();
             this.deletePriziuretojasButton = new System.Windows.Forms.Button();
+            this.deletePriziuretojas = new System.Windows.Forms.ComboBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.showButton = new System.Windows.Forms.Button();
+            this.selectComboBox = new System.Windows.Forms.ComboBox();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.joinButton = new System.Windows.Forms.Button();
             this.skipAndTakeButton = new System.Windows.Forms.Button();
             this.skipBox = new System.Windows.Forms.TextBox();
@@ -169,10 +169,10 @@
             this.label46 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
             this.groupButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.constructionDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statybvieteBindingSource)).BeginInit();
             this.tabControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.insertTab.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.insertStatybvieteTab.SuspendLayout();
@@ -194,6 +194,7 @@
             this.deleteDarbuotojasTab.SuspendLayout();
             this.deleteStatybininkasTab.SuspendLayout();
             this.deletePriziuretojasTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // constructionDBDataSet
@@ -221,38 +222,6 @@
             this.tabControl1.Size = new System.Drawing.Size(348, 411);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.Click += new System.EventHandler(this.tabControl1_Click);
-            // 
-            // showButton
-            // 
-            this.showButton.Location = new System.Drawing.Point(385, 104);
-            this.showButton.Name = "showButton";
-            this.showButton.Size = new System.Drawing.Size(121, 33);
-            this.showButton.TabIndex = 2;
-            this.showButton.Text = "Show";
-            this.showButton.UseVisualStyleBackColor = true;
-            this.showButton.Click += new System.EventHandler(this.showButton_Click);
-            // 
-            // selectComboBox
-            // 
-            this.selectComboBox.FormattingEnabled = true;
-            this.selectComboBox.Items.AddRange(new object[] {
-            "Statybvietės",
-            "Įmonės",
-            "Darbuotojai",
-            "Statybininkai",
-            "Prižiūrėtojai"});
-            this.selectComboBox.Location = new System.Drawing.Point(385, 73);
-            this.selectComboBox.Name = "selectComboBox";
-            this.selectComboBox.Size = new System.Drawing.Size(121, 21);
-            this.selectComboBox.TabIndex = 1;
-            // 
-            // dataGridView
-            // 
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(512, 34);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(654, 373);
-            this.dataGridView.TabIndex = 0;
             // 
             // insertTab
             // 
@@ -419,7 +388,7 @@
             this.insertImoneTab.Location = new System.Drawing.Point(4, 22);
             this.insertImoneTab.Name = "insertImoneTab";
             this.insertImoneTab.Padding = new System.Windows.Forms.Padding(3);
-            this.insertImoneTab.Size = new System.Drawing.Size(864, 350);
+            this.insertImoneTab.Size = new System.Drawing.Size(327, 350);
             this.insertImoneTab.TabIndex = 1;
             this.insertImoneTab.Text = "Imonė";
             this.insertImoneTab.UseVisualStyleBackColor = true;
@@ -499,7 +468,7 @@
             this.insertDarbuotojasTab.Controls.Add(this.label10);
             this.insertDarbuotojasTab.Location = new System.Drawing.Point(4, 22);
             this.insertDarbuotojasTab.Name = "insertDarbuotojasTab";
-            this.insertDarbuotojasTab.Size = new System.Drawing.Size(864, 350);
+            this.insertDarbuotojasTab.Size = new System.Drawing.Size(327, 350);
             this.insertDarbuotojasTab.TabIndex = 2;
             this.insertDarbuotojasTab.Text = "Darbuotojas";
             this.insertDarbuotojasTab.UseVisualStyleBackColor = true;
@@ -620,7 +589,7 @@
             this.insertStatybininkasTab.Controls.Add(this.label16);
             this.insertStatybininkasTab.Location = new System.Drawing.Point(4, 22);
             this.insertStatybininkasTab.Name = "insertStatybininkasTab";
-            this.insertStatybininkasTab.Size = new System.Drawing.Size(864, 350);
+            this.insertStatybininkasTab.Size = new System.Drawing.Size(327, 350);
             this.insertStatybininkasTab.TabIndex = 3;
             this.insertStatybininkasTab.Text = "Statybininkas";
             this.insertStatybininkasTab.UseVisualStyleBackColor = true;
@@ -679,7 +648,7 @@
             this.insertPriziuretojasTab.Controls.Add(this.label17);
             this.insertPriziuretojasTab.Location = new System.Drawing.Point(4, 22);
             this.insertPriziuretojasTab.Name = "insertPriziuretojasTab";
-            this.insertPriziuretojasTab.Size = new System.Drawing.Size(864, 350);
+            this.insertPriziuretojasTab.Size = new System.Drawing.Size(327, 350);
             this.insertPriziuretojasTab.TabIndex = 4;
             this.insertPriziuretojasTab.Text = "Prižiūrėtojas";
             this.insertPriziuretojasTab.UseVisualStyleBackColor = true;
@@ -1272,6 +1241,24 @@
             this.deleteStatybvieteTab.Text = "Statybvietė";
             this.deleteStatybvieteTab.UseVisualStyleBackColor = true;
             // 
+            // deleteStatybvieteButton
+            // 
+            this.deleteStatybvieteButton.Location = new System.Drawing.Point(44, 94);
+            this.deleteStatybvieteButton.Name = "deleteStatybvieteButton";
+            this.deleteStatybvieteButton.Size = new System.Drawing.Size(155, 58);
+            this.deleteStatybvieteButton.TabIndex = 8;
+            this.deleteStatybvieteButton.Text = "DELETE";
+            this.deleteStatybvieteButton.UseVisualStyleBackColor = true;
+            this.deleteStatybvieteButton.Click += new System.EventHandler(this.deleteStatybvieteButton_Click);
+            // 
+            // deleteStatybviete
+            // 
+            this.deleteStatybviete.FormattingEnabled = true;
+            this.deleteStatybviete.Location = new System.Drawing.Point(78, 36);
+            this.deleteStatybviete.Name = "deleteStatybviete";
+            this.deleteStatybviete.Size = new System.Drawing.Size(121, 21);
+            this.deleteStatybviete.TabIndex = 7;
+            // 
             // label41
             // 
             this.label41.AutoSize = true;
@@ -1294,6 +1281,24 @@
             this.deleteImoneTab.Text = "Imonė";
             this.deleteImoneTab.UseVisualStyleBackColor = true;
             // 
+            // deleteImoneButton
+            // 
+            this.deleteImoneButton.Location = new System.Drawing.Point(49, 93);
+            this.deleteImoneButton.Name = "deleteImoneButton";
+            this.deleteImoneButton.Size = new System.Drawing.Size(155, 58);
+            this.deleteImoneButton.TabIndex = 9;
+            this.deleteImoneButton.Text = "DELETE";
+            this.deleteImoneButton.UseVisualStyleBackColor = true;
+            this.deleteImoneButton.Click += new System.EventHandler(this.deleteImoneButton_Click);
+            // 
+            // deleteImone
+            // 
+            this.deleteImone.FormattingEnabled = true;
+            this.deleteImone.Location = new System.Drawing.Point(83, 36);
+            this.deleteImone.Name = "deleteImone";
+            this.deleteImone.Size = new System.Drawing.Size(121, 21);
+            this.deleteImone.TabIndex = 8;
+            // 
             // label42
             // 
             this.label42.AutoSize = true;
@@ -1314,6 +1319,24 @@
             this.deleteDarbuotojasTab.TabIndex = 2;
             this.deleteDarbuotojasTab.Text = "Darbuotojas";
             this.deleteDarbuotojasTab.UseVisualStyleBackColor = true;
+            // 
+            // deleteDarbuotojasButton
+            // 
+            this.deleteDarbuotojasButton.Location = new System.Drawing.Point(43, 92);
+            this.deleteDarbuotojasButton.Name = "deleteDarbuotojasButton";
+            this.deleteDarbuotojasButton.Size = new System.Drawing.Size(155, 58);
+            this.deleteDarbuotojasButton.TabIndex = 9;
+            this.deleteDarbuotojasButton.Text = "DELETE";
+            this.deleteDarbuotojasButton.UseVisualStyleBackColor = true;
+            this.deleteDarbuotojasButton.Click += new System.EventHandler(this.deleteDarbuotojasButton_Click);
+            // 
+            // deleteDarbuotojas
+            // 
+            this.deleteDarbuotojas.FormattingEnabled = true;
+            this.deleteDarbuotojas.Location = new System.Drawing.Point(81, 38);
+            this.deleteDarbuotojas.Name = "deleteDarbuotojas";
+            this.deleteDarbuotojas.Size = new System.Drawing.Size(121, 21);
+            this.deleteDarbuotojas.TabIndex = 8;
             // 
             // label43
             // 
@@ -1336,6 +1359,24 @@
             this.deleteStatybininkasTab.Text = "Statybininkas";
             this.deleteStatybininkasTab.UseVisualStyleBackColor = true;
             // 
+            // deleteStatybininkasButton
+            // 
+            this.deleteStatybininkasButton.Location = new System.Drawing.Point(55, 86);
+            this.deleteStatybininkasButton.Name = "deleteStatybininkasButton";
+            this.deleteStatybininkasButton.Size = new System.Drawing.Size(155, 58);
+            this.deleteStatybininkasButton.TabIndex = 9;
+            this.deleteStatybininkasButton.Text = "DELETE";
+            this.deleteStatybininkasButton.UseVisualStyleBackColor = true;
+            this.deleteStatybininkasButton.Click += new System.EventHandler(this.deleteStatybininkasButton_Click);
+            // 
+            // deleteStatybininkas
+            // 
+            this.deleteStatybininkas.FormattingEnabled = true;
+            this.deleteStatybininkas.Location = new System.Drawing.Point(92, 35);
+            this.deleteStatybininkas.Name = "deleteStatybininkas";
+            this.deleteStatybininkas.Size = new System.Drawing.Size(121, 21);
+            this.deleteStatybininkas.TabIndex = 8;
+            // 
             // label44
             // 
             this.label44.AutoSize = true;
@@ -1357,95 +1398,6 @@
             this.deletePriziuretojasTab.Text = "Prižiūrėtojas";
             this.deletePriziuretojasTab.UseVisualStyleBackColor = true;
             // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(40, 40);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(21, 13);
-            this.label45.TabIndex = 6;
-            this.label45.Text = "AK";
-            // 
-            // deleteStatybviete
-            // 
-            this.deleteStatybviete.FormattingEnabled = true;
-            this.deleteStatybviete.Location = new System.Drawing.Point(78, 36);
-            this.deleteStatybviete.Name = "deleteStatybviete";
-            this.deleteStatybviete.Size = new System.Drawing.Size(121, 21);
-            this.deleteStatybviete.TabIndex = 7;
-            // 
-            // deleteImone
-            // 
-            this.deleteImone.FormattingEnabled = true;
-            this.deleteImone.Location = new System.Drawing.Point(83, 36);
-            this.deleteImone.Name = "deleteImone";
-            this.deleteImone.Size = new System.Drawing.Size(121, 21);
-            this.deleteImone.TabIndex = 8;
-            // 
-            // deleteDarbuotojas
-            // 
-            this.deleteDarbuotojas.FormattingEnabled = true;
-            this.deleteDarbuotojas.Location = new System.Drawing.Point(81, 38);
-            this.deleteDarbuotojas.Name = "deleteDarbuotojas";
-            this.deleteDarbuotojas.Size = new System.Drawing.Size(121, 21);
-            this.deleteDarbuotojas.TabIndex = 8;
-            // 
-            // deleteStatybininkas
-            // 
-            this.deleteStatybininkas.FormattingEnabled = true;
-            this.deleteStatybininkas.Location = new System.Drawing.Point(92, 35);
-            this.deleteStatybininkas.Name = "deleteStatybininkas";
-            this.deleteStatybininkas.Size = new System.Drawing.Size(121, 21);
-            this.deleteStatybininkas.TabIndex = 8;
-            // 
-            // deletePriziuretojas
-            // 
-            this.deletePriziuretojas.FormattingEnabled = true;
-            this.deletePriziuretojas.Location = new System.Drawing.Point(81, 32);
-            this.deletePriziuretojas.Name = "deletePriziuretojas";
-            this.deletePriziuretojas.Size = new System.Drawing.Size(121, 21);
-            this.deletePriziuretojas.TabIndex = 8;
-            // 
-            // deleteStatybvieteButton
-            // 
-            this.deleteStatybvieteButton.Location = new System.Drawing.Point(44, 94);
-            this.deleteStatybvieteButton.Name = "deleteStatybvieteButton";
-            this.deleteStatybvieteButton.Size = new System.Drawing.Size(155, 58);
-            this.deleteStatybvieteButton.TabIndex = 8;
-            this.deleteStatybvieteButton.Text = "DELETE";
-            this.deleteStatybvieteButton.UseVisualStyleBackColor = true;
-            this.deleteStatybvieteButton.Click += new System.EventHandler(this.deleteStatybvieteButton_Click);
-            // 
-            // deleteImoneButton
-            // 
-            this.deleteImoneButton.Location = new System.Drawing.Point(49, 93);
-            this.deleteImoneButton.Name = "deleteImoneButton";
-            this.deleteImoneButton.Size = new System.Drawing.Size(155, 58);
-            this.deleteImoneButton.TabIndex = 9;
-            this.deleteImoneButton.Text = "DELETE";
-            this.deleteImoneButton.UseVisualStyleBackColor = true;
-            this.deleteImoneButton.Click += new System.EventHandler(this.deleteImoneButton_Click);
-            // 
-            // deleteDarbuotojasButton
-            // 
-            this.deleteDarbuotojasButton.Location = new System.Drawing.Point(43, 92);
-            this.deleteDarbuotojasButton.Name = "deleteDarbuotojasButton";
-            this.deleteDarbuotojasButton.Size = new System.Drawing.Size(155, 58);
-            this.deleteDarbuotojasButton.TabIndex = 9;
-            this.deleteDarbuotojasButton.Text = "DELETE";
-            this.deleteDarbuotojasButton.UseVisualStyleBackColor = true;
-            this.deleteDarbuotojasButton.Click += new System.EventHandler(this.deleteDarbuotojasButton_Click);
-            // 
-            // deleteStatybininkasButton
-            // 
-            this.deleteStatybininkasButton.Location = new System.Drawing.Point(55, 86);
-            this.deleteStatybininkasButton.Name = "deleteStatybininkasButton";
-            this.deleteStatybininkasButton.Size = new System.Drawing.Size(155, 58);
-            this.deleteStatybininkasButton.TabIndex = 9;
-            this.deleteStatybininkasButton.Text = "DELETE";
-            this.deleteStatybininkasButton.UseVisualStyleBackColor = true;
-            this.deleteStatybininkasButton.Click += new System.EventHandler(this.deleteStatybininkasButton_Click);
-            // 
             // deletePriziuretojasButton
             // 
             this.deletePriziuretojasButton.Location = new System.Drawing.Point(47, 80);
@@ -1455,6 +1407,55 @@
             this.deletePriziuretojasButton.Text = "DELETE";
             this.deletePriziuretojasButton.UseVisualStyleBackColor = true;
             this.deletePriziuretojasButton.Click += new System.EventHandler(this.deletePriziuretojasButton_Click);
+            // 
+            // deletePriziuretojas
+            // 
+            this.deletePriziuretojas.FormattingEnabled = true;
+            this.deletePriziuretojas.Location = new System.Drawing.Point(81, 32);
+            this.deletePriziuretojas.Name = "deletePriziuretojas";
+            this.deletePriziuretojas.Size = new System.Drawing.Size(121, 21);
+            this.deletePriziuretojas.TabIndex = 8;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(40, 40);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(21, 13);
+            this.label45.TabIndex = 6;
+            this.label45.Text = "AK";
+            // 
+            // showButton
+            // 
+            this.showButton.Location = new System.Drawing.Point(385, 104);
+            this.showButton.Name = "showButton";
+            this.showButton.Size = new System.Drawing.Size(121, 33);
+            this.showButton.TabIndex = 2;
+            this.showButton.Text = "Show";
+            this.showButton.UseVisualStyleBackColor = true;
+            this.showButton.Click += new System.EventHandler(this.showButton_Click);
+            // 
+            // selectComboBox
+            // 
+            this.selectComboBox.FormattingEnabled = true;
+            this.selectComboBox.Items.AddRange(new object[] {
+            "Statybvietės",
+            "Įmonės",
+            "Darbuotojai",
+            "Statybininkai",
+            "Prižiūrėtojai"});
+            this.selectComboBox.Location = new System.Drawing.Point(385, 73);
+            this.selectComboBox.Name = "selectComboBox";
+            this.selectComboBox.Size = new System.Drawing.Size(121, 21);
+            this.selectComboBox.TabIndex = 1;
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(512, 34);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.Size = new System.Drawing.Size(654, 373);
+            this.dataGridView.TabIndex = 0;
             // 
             // joinButton
             // 
@@ -1518,11 +1519,22 @@
             this.groupButton.UseVisualStyleBackColor = true;
             this.groupButton.Click += new System.EventHandler(this.groupButton_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(385, 186);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(118, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Top 5 statybvietes";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1185, 440);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupButton);
             this.Controls.Add(this.label47);
             this.Controls.Add(this.label46);
@@ -1539,7 +1551,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.constructionDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.statybvieteBindingSource)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.insertTab.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.insertStatybvieteTab.ResumeLayout(false);
@@ -1576,6 +1587,7 @@
             this.deleteStatybininkasTab.PerformLayout();
             this.deletePriziuretojasTab.ResumeLayout(false);
             this.deletePriziuretojasTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1723,6 +1735,7 @@
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Button groupButton;
+        private System.Windows.Forms.Button button1;
     }
 }
 

@@ -145,5 +145,32 @@ namespace ConstructionDataBase
             return myDataTable;
         }
 
+        public DataTable Top5(DataTable data)
+        {
+            var groupedData = from d in data.AsEnumerable()
+                              group d by d.Field<int>("Statybviete") into g
+
+                              select new
+                              {
+                                  Statybviete = g.Key,
+                                  Count = g.Count(),
+                              };
+            groupedData.OrderByDescending(x => x.Count);
+
+            DataTable myDataTable = new DataTable();
+
+            myDataTable.Columns.Add("Statybviete", typeof(int));
+            myDataTable.Columns.Add("Count", typeof(int));
+
+            foreach (var element in groupedData)
+            {
+                var row = myDataTable.NewRow();
+                row["Statybviete"] = element.Statybviete;
+                row["Count"] = element.Count;
+                myDataTable.Rows.Add(row);
+            }
+
+            return myDataTable.AsEnumerable().Take(5).CopyToDataTable();
+        }
     }
 }
