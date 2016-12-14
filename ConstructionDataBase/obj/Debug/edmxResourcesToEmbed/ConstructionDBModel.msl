@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ConstructionDBModelStoreContainer" CdmEntityContainer="ConstructionDBEntities">
+    <EntitySetMapping Name="Darbuotojas1">
+      <EntityTypeMapping TypeName="ConstructionDBModel.Darbuotojas">
+        <MappingFragment StoreEntitySet="Darbuotojas">
+          <ScalarProperty Name="AK" ColumnName="AK" />
+          <ScalarProperty Name="Vardas" ColumnName="Vardas" />
+          <ScalarProperty Name="Pavarde" ColumnName="Pavarde" />
+          <ScalarProperty Name="Tel_nr" ColumnName="Tel_nr" />
+          <ScalarProperty Name="Alga" ColumnName="Alga" />
+          <ScalarProperty Name="Statybviete" ColumnName="Statybviete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Imones">
+      <EntityTypeMapping TypeName="ConstructionDBModel.Imone">
+        <MappingFragment StoreEntitySet="Imone">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Pavadinimas" ColumnName="Pavadinimas" />
+          <ScalarProperty Name="Adresas" ColumnName="Adresas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Priziuretojas1">
+      <EntityTypeMapping TypeName="ConstructionDBModel.Priziuretojas">
+        <MappingFragment StoreEntitySet="Priziuretojas">
+          <ScalarProperty Name="AK" ColumnName="AK" />
+          <ScalarProperty Name="El_pastas" ColumnName="El_pastas" />
+          <ScalarProperty Name="Imone" ColumnName="Imone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Statybininkas1">
+      <EntityTypeMapping TypeName="ConstructionDBModel.Statybininkas">
+        <MappingFragment StoreEntitySet="Statybininkas">
+          <ScalarProperty Name="AK" ColumnName="AK" />
+          <ScalarProperty Name="Kvalifikacija" ColumnName="Kvalifikacija" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Statybvietes">
+      <EntityTypeMapping TypeName="ConstructionDBModel.Statybviete">
+        <MappingFragment StoreEntitySet="Statybviete">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Tipas" ColumnName="Tipas" />
+          <ScalarProperty Name="Plotas" ColumnName="Plotas" />
+          <ScalarProperty Name="Adresas" ColumnName="Adresas" />
+          <ScalarProperty Name="Pradzia" ColumnName="Pradzia" />
+          <ScalarProperty Name="Pabaiga" ColumnName="Pabaiga" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

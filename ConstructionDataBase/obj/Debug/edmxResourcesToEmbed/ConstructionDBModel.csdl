@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ConstructionDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ConstructionDBEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Darbuotojas1" EntityType="ConstructionDBModel.Darbuotojas" />
+    <EntitySet Name="Imones" EntityType="ConstructionDBModel.Imone" />
+    <EntitySet Name="Priziuretojas1" EntityType="ConstructionDBModel.Priziuretojas" />
+    <EntitySet Name="Statybininkas1" EntityType="ConstructionDBModel.Statybininkas" />
+    <EntitySet Name="Statybvietes" EntityType="ConstructionDBModel.Statybviete" />
+    <AssociationSet Name="FK_Darbuotojas_ToTable" Association="ConstructionDBModel.FK_Darbuotojas_ToTable">
+      <End Role="Statybviete" EntitySet="Statybvietes" />
+      <End Role="Darbuotojas" EntitySet="Darbuotojas1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Priziuretojas_ToTable" Association="ConstructionDBModel.FK_Priziuretojas_ToTable">
+      <End Role="Darbuotojas" EntitySet="Darbuotojas1" />
+      <End Role="Priziuretojas" EntitySet="Priziuretojas1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Statybininkas_ToTable" Association="ConstructionDBModel.FK_Statybininkas_ToTable">
+      <End Role="Darbuotojas" EntitySet="Darbuotojas1" />
+      <End Role="Statybininkas" EntitySet="Statybininkas1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Priziuretojas_ToTable_1" Association="ConstructionDBModel.FK_Priziuretojas_ToTable_1">
+      <End Role="Imone" EntitySet="Imones" />
+      <End Role="Priziuretoja" EntitySet="Priziuretojas1" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Darbuotojas">
+    <Key>
+      <PropertyRef Name="AK" />
+    </Key>
+    <Property Name="AK" Type="Int64" Nullable="false" />
+    <Property Name="Vardas" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Pavarde" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Tel_nr" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="Alga" Type="Int32" Nullable="false" />
+    <Property Name="Statybviete" Type="Int32" />
+    <NavigationProperty Name="StatybvietesID" Relationship="ConstructionDBModel.FK_Darbuotojas_ToTable" FromRole="Darbuotojas" ToRole="Statybviete" />
+    <NavigationProperty Name="PriziuretojoAK" Relationship="ConstructionDBModel.FK_Priziuretojas_ToTable" FromRole="Darbuotojas" ToRole="Priziuretojas" />
+    <NavigationProperty Name="StatybininkoAK" Relationship="ConstructionDBModel.FK_Statybininkas_ToTable" FromRole="Darbuotojas" ToRole="Statybininkas" />
+  </EntityType>
+  <EntityType Name="Imone">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Pavadinimas" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Adresas" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Priziuretojas" Relationship="ConstructionDBModel.FK_Priziuretojas_ToTable_1" FromRole="Imone" ToRole="Priziuretoja" />
+  </EntityType>
+  <EntityType Name="Priziuretojas">
+    <Key>
+      <PropertyRef Name="AK" />
+    </Key>
+    <Property Name="AK" Type="Int64" Nullable="false" />
+    <Property Name="El_pastas" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Imone" Type="Int32" />
+    <NavigationProperty Name="DarbuotojoAK" Relationship="ConstructionDBModel.FK_Priziuretojas_ToTable" FromRole="Priziuretojas" ToRole="Darbuotojas" />
+    <NavigationProperty Name="ImonesID" Relationship="ConstructionDBModel.FK_Priziuretojas_ToTable_1" FromRole="Priziuretoja" ToRole="Imone" />
+  </EntityType>
+  <EntityType Name="Statybininkas">
+    <Key>
+      <PropertyRef Name="AK" />
+    </Key>
+    <Property Name="AK" Type="Int64" Nullable="false" />
+    <Property Name="Kvalifikacija" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="DarbuotojoAK" Relationship="ConstructionDBModel.FK_Statybininkas_ToTable" FromRole="Statybininkas" ToRole="Darbuotojas" />
+  </EntityType>
+  <EntityType Name="Statybviete">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Tipas" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Plotas" Type="Int32" Nullable="false" />
+    <Property Name="Adresas" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Pradzia" Type="DateTime" Precision="0" />
+    <Property Name="Pabaiga" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Darbuotojas" Relationship="ConstructionDBModel.FK_Darbuotojas_ToTable" FromRole="Statybviete" ToRole="Darbuotojas" />
+  </EntityType>
+  <Association Name="FK_Darbuotojas_ToTable">
+    <End Role="Statybviete" Type="ConstructionDBModel.Statybviete" Multiplicity="0..1" />
+    <End Role="Darbuotojas" Type="ConstructionDBModel.Darbuotojas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Statybviete">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Darbuotojas">
+        <PropertyRef Name="Statybviete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Priziuretojas_ToTable">
+    <End Role="Darbuotojas" Type="ConstructionDBModel.Darbuotojas" Multiplicity="1" />
+    <End Role="Priziuretojas" Type="ConstructionDBModel.Priziuretojas" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Darbuotojas">
+        <PropertyRef Name="AK" />
+      </Principal>
+      <Dependent Role="Priziuretojas">
+        <PropertyRef Name="AK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Statybininkas_ToTable">
+    <End Role="Darbuotojas" Type="ConstructionDBModel.Darbuotojas" Multiplicity="1" />
+    <End Role="Statybininkas" Type="ConstructionDBModel.Statybininkas" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Darbuotojas">
+        <PropertyRef Name="AK" />
+      </Principal>
+      <Dependent Role="Statybininkas">
+        <PropertyRef Name="AK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Priziuretojas_ToTable_1">
+    <End Type="ConstructionDBModel.Imone" Role="Imone" Multiplicity="0..1" />
+    <End Type="ConstructionDBModel.Priziuretojas" Role="Priziuretoja" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Imone">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Priziuretoja">
+        <PropertyRef Name="Imone" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

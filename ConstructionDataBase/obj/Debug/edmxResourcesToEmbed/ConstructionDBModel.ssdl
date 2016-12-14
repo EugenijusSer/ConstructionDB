@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ConstructionDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ConstructionDBModelStoreContainer">
+    <EntitySet Name="Darbuotojas" EntityType="ConstructionDBModel.Store.Darbuotojas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Imone" EntityType="ConstructionDBModel.Store.Imone" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Priziuretojas" EntityType="ConstructionDBModel.Store.Priziuretojas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Statybininkas" EntityType="ConstructionDBModel.Store.Statybininkas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Statybviete" EntityType="ConstructionDBModel.Store.Statybviete" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Darbuotojas_ToTable" Association="ConstructionDBModel.Store.FK_Darbuotojas_ToTable">
+      <End Role="Statybviete" EntitySet="Statybviete" />
+      <End Role="Darbuotojas" EntitySet="Darbuotojas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Priziuretojas_ToTable" Association="ConstructionDBModel.Store.FK_Priziuretojas_ToTable">
+      <End Role="Darbuotojas" EntitySet="Darbuotojas" />
+      <End Role="Priziuretojas" EntitySet="Priziuretojas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Priziuretojas_ToTable_1" Association="ConstructionDBModel.Store.FK_Priziuretojas_ToTable_1">
+      <End Role="Imone" EntitySet="Imone" />
+      <End Role="Priziuretojas" EntitySet="Priziuretojas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Statybininkas_ToTable" Association="ConstructionDBModel.Store.FK_Statybininkas_ToTable">
+      <End Role="Darbuotojas" EntitySet="Darbuotojas" />
+      <End Role="Statybininkas" EntitySet="Statybininkas" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Darbuotojas">
+    <Key>
+      <PropertyRef Name="AK" />
+    </Key>
+    <Property Name="AK" Type="bigint" Nullable="false" />
+    <Property Name="Vardas" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Pavarde" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Tel_nr" Type="nvarchar" MaxLength="20" />
+    <Property Name="Alga" Type="int" Nullable="false" />
+    <Property Name="Statybviete" Type="int" />
+  </EntityType>
+  <EntityType Name="Imone">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Pavadinimas" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Adresas" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Priziuretojas">
+    <Key>
+      <PropertyRef Name="AK" />
+    </Key>
+    <Property Name="AK" Type="bigint" Nullable="false" />
+    <Property Name="El_pastas" Type="nvarchar" MaxLength="50" />
+    <Property Name="Imone" Type="int" />
+  </EntityType>
+  <EntityType Name="Statybininkas">
+    <Key>
+      <PropertyRef Name="AK" />
+    </Key>
+    <Property Name="AK" Type="bigint" Nullable="false" />
+    <Property Name="Kvalifikacija" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Statybviete">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Tipas" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Plotas" Type="int" Nullable="false" />
+    <Property Name="Adresas" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Pradzia" Type="date" />
+    <Property Name="Pabaiga" Type="date" />
+  </EntityType>
+  <Association Name="FK_Darbuotojas_ToTable">
+    <End Role="Statybviete" Type="ConstructionDBModel.Store.Statybviete" Multiplicity="0..1" />
+    <End Role="Darbuotojas" Type="ConstructionDBModel.Store.Darbuotojas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Statybviete">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Darbuotojas">
+        <PropertyRef Name="Statybviete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Priziuretojas_ToTable">
+    <End Role="Darbuotojas" Type="ConstructionDBModel.Store.Darbuotojas" Multiplicity="1" />
+    <End Role="Priziuretojas" Type="ConstructionDBModel.Store.Priziuretojas" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Darbuotojas">
+        <PropertyRef Name="AK" />
+      </Principal>
+      <Dependent Role="Priziuretojas">
+        <PropertyRef Name="AK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Priziuretojas_ToTable_1">
+    <End Role="Imone" Type="ConstructionDBModel.Store.Imone" Multiplicity="0..1" />
+    <End Role="Priziuretojas" Type="ConstructionDBModel.Store.Priziuretojas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Imone">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Priziuretojas">
+        <PropertyRef Name="Imone" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Statybininkas_ToTable">
+    <End Role="Darbuotojas" Type="ConstructionDBModel.Store.Darbuotojas" Multiplicity="1" />
+    <End Role="Statybininkas" Type="ConstructionDBModel.Store.Statybininkas" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Darbuotojas">
+        <PropertyRef Name="AK" />
+      </Principal>
+      <Dependent Role="Statybininkas">
+        <PropertyRef Name="AK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

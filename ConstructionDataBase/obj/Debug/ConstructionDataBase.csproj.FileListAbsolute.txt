@@ -1,0 +1,11 @@
+c:\users\user\documents\visual studio 2012\Projects\ConstructionDataBase\ConstructionDataBase\bin\Debug\ConstructionDataBase.exe.config
+c:\users\user\documents\visual studio 2012\Projects\ConstructionDataBase\ConstructionDataBase\bin\Debug\ConstructionDataBase.exe
+c:\users\user\documents\visual studio 2012\Projects\ConstructionDataBase\ConstructionDataBase\bin\Debug\ConstructionDataBase.pdb
+c:\users\user\documents\visual studio 2012\Projects\ConstructionDataBase\ConstructionDataBase\obj\Debug\ConstructionDataBase.csprojResolveAssemblyReference.cache
+c:\users\user\documents\visual studio 2012\Projects\ConstructionDataBase\ConstructionDataBase\obj\Debug\ConstructionDataBase.Form1.resources
+c:\users\user\documents\visual studio 2012\Projects\ConstructionDataBase\ConstructionDataBase\obj\Debug\ConstructionDataBase.Properties.Resources.resources
+c:\users\user\documents\visual studio 2012\Projects\ConstructionDataBase\ConstructionDataBase\obj\Debug\ConstructionDataBase.csproj.GenerateResource.Cache
+c:\users\user\documents\visual studio 2012\Projects\ConstructionDataBase\ConstructionDataBase\obj\Debug\ConstructionDataBase.exe
+c:\users\user\documents\visual studio 2012\Projects\ConstructionDataBase\ConstructionDataBase\obj\Debug\ConstructionDataBase.pdb
+C:\Users\User\Documents\Visual Studio 2012\Projects\ConstructionDataBase\ConstructionDataBase\bin\Debug\EntityFramework.dll
+C:\Users\User\Documents\Visual Studio 2012\Projects\ConstructionDataBase\ConstructionDataBase\bin\Debug\EntityFramework.xml
